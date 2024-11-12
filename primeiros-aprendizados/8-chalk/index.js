@@ -1,5 +1,5 @@
-const chalk = require('chalk')
 
+const chalk = require('chalk')
 const nota = 7
 
 if(nota >= 7) {
