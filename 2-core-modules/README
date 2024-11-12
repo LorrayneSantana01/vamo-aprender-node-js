@@ -1,0 +1,4 @@
+http: módulo para criar servidores HTTP
+path: extrair informações de paths (caminhos) de arquivos
+fs: file system, leitura e escrita de arquivos
+url: módulo para trabalhar com URLs
