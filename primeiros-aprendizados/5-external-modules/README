@@ -1,0 +1,3 @@
+Iniciar npm no projeto: npm init
+
+Instalar pacote: npm install <nome-do-pacote>
