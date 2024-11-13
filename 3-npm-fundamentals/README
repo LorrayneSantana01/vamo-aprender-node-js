@@ -1,0 +1,17 @@
+CRIAR PROJETO: npm init
+
+CRIAR PROJETO RÁPIDO: npm init -y
+
+INSTALAR PACOTES: npm install <nome-do-pacote>
+
+ATUALIZAR PACOTES: npm update
+
+ATUALIZAR PACOTES ESPECIFÍCOS: npm update <nome-do-pacote>
+
+CHEGAR ATUALIZAÇÕES: npx npm-check-updates -u
+
+INSTALAR PACOTES GLOBAIS: npm install -g <nome-do-pacote>
+
+EXECUTAR PACOTES: npx <nome-do-pacote>
+
+EXCLUIR PACOTES: npm uninstall <nome-do-pacote>
