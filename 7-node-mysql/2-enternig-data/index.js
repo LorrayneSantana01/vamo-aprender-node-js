@@ -40,8 +40,9 @@ app.post('/books/insertbooks', (req, res) => {
 const conn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'Mc@@2024**',
+  password: '',
   database: 'nodemysql',
+  port: '3305'
 })
 
 conn.connect(function (err) {
