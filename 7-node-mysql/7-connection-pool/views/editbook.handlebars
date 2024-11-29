@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Edição</title>
+</head>
+
+<body>
+    <h1>Edite o seu livro:</h1>
+    <form action='/books/updatebook' method="post">
+        <input type="hidden" value="{{books.id}}">
+        <div>
+            <label for="title">Qual o título do livro?</label>
+            <input type="text" name="title" placeholder="Digite o título" value="{{books.title}}">
+        </div>
+        <div>
+            <label for="pageqty">Qual a quantidade de páginas?</label>
+            <input type="number" name="pageqty" placeholder="Digite o número" value="{{books.pageqty}}">
+        </div>
+        <input class="btn" type="submit" value="Editar">
+    </form>
+</body>
+
+</html>
