@@ -1,6 +1,6 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
-const mysql = require('mysql')
+const pool = require('./db/conn')
 
 const app = express()
 
@@ -40,7 +40,7 @@ app.post('/books/insertbooks', (req, res) => {
 app.get('/books', (req, res) => {
   const query = 'SELECT * FROM books'
 
-  conn.query(query, function(err, data) {
+  pool.query(query, function(err, data) {
     if (err) {
       console.log(err)
       return
@@ -60,7 +60,7 @@ app.get('/book/:id', (req, res) => {
 
   const query = `SELECT * FROM books WHERE id = ${id}`
 
-  conn.query(query, function(err, data) {
+  pool.query(query, function(err, data) {
     if (err) {
       console.log(err)
       return
@@ -78,7 +78,7 @@ app.get('/books/edit/:id', (req, res) => {
 
   const query = `SELECT * FROM books WHERE id = ${id}`
 
-  conn.query(query, function(err, data) {
+  pool.query(query, function(err, data) {
     if (err) {
       console.log(err)
       return
@@ -99,7 +99,7 @@ app.post('/books/updatebook', function (req, res) {
 
   const query = `UPDATE books SET title = '${title}', pageqty = ${pageqty} WHERE id = ${id}`
 
-  conn.query(query, function(err) {
+  pool.query(query, function(err) {
     if (err) {
       console.log(err)
     }
@@ -114,7 +114,7 @@ app.post('/books/remove/:id', function (req, res) {
 
   const query = `DELETE FROM books WHERE id = ${id}`
 
-  conn.query(query, function(err) {
+  pool.query(query, function(err) {
     if (err) {
       console.log(err)
     }
@@ -123,20 +123,4 @@ app.post('/books/remove/:id', function (req, res) {
   })
 })
 
-const conn = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'nodemysql',
-  port: '3305'
-})
-
-conn.connect(function (err) {
-  if (err) {
-    console.log(err)
-  }
-
-  console.log('Conectou!')
-
-  app.listen(3000)
-})
+app.listen(3000)
